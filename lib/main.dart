@@ -1,6 +1,6 @@
-import 'package:bookly_app/features/splash/splash.dart';
+import 'package:bookly_app/core/utils/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'core/routes/app_router.dart';
 
 
 void main() {
@@ -12,8 +12,12 @@ class BookApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home: Splash(),
+    return MaterialApp.router(
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: AppColor.primaryColor,
+      ),
     );
   }
 }
