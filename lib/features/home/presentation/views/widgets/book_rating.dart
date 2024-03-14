@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
+  final int rating;
+  final int count;
   MainAxisAlignment mainAxisAlignment;
-  BookRating({Key? key,this.mainAxisAlignment = MainAxisAlignment.start}) : super(key: key);
+  BookRating({Key? key,this.mainAxisAlignment = MainAxisAlignment.start,required this.rating,required this.count}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +15,9 @@ class BookRating extends StatelessWidget {
       children: [
         const Icon(Icons.star,color: Colors.yellow,size: 14,),
         const SizedBox(width: 6.3,),
-        const Text("4.8",style: Styles.textStyle16,),
+        Text("$rating",style: Styles.textStyle16,),
         const SizedBox(width: 5,),
-        Text("(245)",style: Styles.textStyle14.copyWith(color: Colors.grey),)
+        Text("($count)",style: Styles.textStyle14.copyWith(color: Colors.grey),)
       ],
     );
   }

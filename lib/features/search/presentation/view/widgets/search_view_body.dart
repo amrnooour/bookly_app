@@ -12,9 +12,12 @@ class SearchViewBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
+          SizedBox(height: 16,),
           CustomSearchTextField(),
           SizedBox(height: 16,),
-          Text("Search Result",style: Styles.textStyle18SemiBold,),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Text("Search Result",style: Styles.textStyle18SemiBold,)),
           SizedBox(height: 16,),
           Expanded(child: SearchResultListView()),
         ],

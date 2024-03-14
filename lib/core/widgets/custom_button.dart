@@ -8,7 +8,8 @@ class CustomButton extends StatelessWidget {
   Color backgroundColor;
   BorderRadius? borderRadius;
   double? fontSize;
-  CustomButton({Key? key,required this.text,required this.color,required this.backgroundColor,this.borderRadius,this.fontSize}) : super(key: key);
+  final void Function()? onPressed;
+  CustomButton({Key? key,required this.text,required this.color,required this.backgroundColor,this.borderRadius,this.fontSize,this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: borderRadius??BorderRadius.circular(12),
           )
         ),
-          onPressed: (){},
+          onPressed: onPressed,
           child: Text(text,style: Styles.textStyle18SemiBold.copyWith(
               color: color,fontWeight: FontWeight.w900,fontSize: fontSize),)),
     );
